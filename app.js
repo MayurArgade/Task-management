@@ -2,7 +2,11 @@
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
+// Before (bad for production):
+const response = await fetch('http://127.0.0.1:5000/tasks');
 
+// After (good for production):
+const response = await fetch('/tasks');
 // Function to load tasks from Flask
 const loadTasks = async () => {
     try {
